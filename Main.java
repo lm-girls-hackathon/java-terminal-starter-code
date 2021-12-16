@@ -8,7 +8,7 @@ public class Main {
 		// creates a new word to guess
 		Word word = new Word("Chrysanthemum");
 
-		System.out.println("The word is " + word.size() + " characters long");
+		System.out.println("The word is " + word.length() + " characters long");
 		
 		System.out.println(word);
 		
