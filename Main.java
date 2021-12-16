@@ -10,16 +10,20 @@ public class Main {
 
 		System.out.println("The word is " + word.length() + " characters long");
 		
-		System.out.println(word);
+		// loop until the user has guessed all characters successfully
+		while (!word.solved()) {
+			System.out.println(word);
+			
+			// use the getChar function to take 1 char from the terminal
+			char guess = getChar();
+			
+			word.guessLetter(guess);
+		}
 		
-		char guess = getChar();
-		
-		word.guessLetter(guess);
-		
-		System.out.println(word);
+		System.out.println("tada");
 	}
 	
-	// Get 1 char from input
+	// Get 1 char from the terminal
 	static char getChar() {
 		return scanner.next().charAt(0);
 	}
