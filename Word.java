@@ -27,15 +27,24 @@ public class Word {
 		// initialize a boolean to store whether or not the character is in the word
 		boolean found = false;
 		
+		char upperCased = Character.toUpperCase(guess);
+		char lowerCased = Character.toLowerCase(guess);
+		
 		// loop over the word
 		for (int i = 0; i < this.answer.length; i++) {
-			// check if the character at the current index is equal to the guess
-			if (this.answer[i] == guess) {
+			// check if the character at the current index is equal to the guess.
+			// we use the uppercased and lowercased version of the guess, so we can find all matches without
+			// worrying if the character is upper or lowercase
+			if (this.answer[i] == upperCased) {
 				
 				// update the display word with the guess
-				this.displayWord[i] = guess;
+				this.displayWord[i] = upperCased;
 				
 				// signal that we've found a match
+				found = true;
+			} else if (this.answer[i] == lowerCased) {
+				this.displayWord[i] = lowerCased;
+				
 				found = true;
 			}
 		}
@@ -43,8 +52,13 @@ public class Word {
 		return found;
 	}
 	
+	
+	/**
+	 * Check if the display word matches the answer, i.e. if the word is solved.
+	 * 
+	 * @return true if all the characters match, false otherwise
+	 */
 	public boolean solved() {
-		
 		// loop over the word
 		for (int i = 0; i < this.answer.length; i++) {
 			
@@ -55,8 +69,13 @@ public class Word {
 		}
 		
 		// if none of the characters don't match, that means all the characters do match
-		// that means the word is solved!
+		// which means the word is solved!
 		return true;
+	}
+	
+	
+	public int size() {
+		return this.answer.length;
 	}
 	
 	
