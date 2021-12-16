@@ -6,15 +6,21 @@ public class Main {
 
 	public static void main(String[] args) {
 		// creates a new word to guess
-		Word word = new Word("hangman");
+		Word word = new Word("Chrysanthemum");
+
+		System.out.println("The word is " + word.size() + " characters long");
+		
 		System.out.println(word);
 		
-		char guess = scanner.next().charAt(0);
-		
+		char guess = getChar();
 		
 		word.guessLetter(guess);
 		
-		
 		System.out.println(word);
+	}
+	
+	// Get 1 char from input
+	static char getChar() {
+		return scanner.next().charAt(0);
 	}
 }
