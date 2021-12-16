@@ -74,7 +74,8 @@ public class Word {
 	}
 	
 	
-	public int size() {
+	// return the length of the word
+	public int length() {
 		return this.answer.length;
 	}
 	
