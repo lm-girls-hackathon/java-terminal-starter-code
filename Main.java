@@ -5,22 +5,9 @@ public class Main {
 	static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		// creates a new word to guess
-		Word word = new Word("Chrysanthemum");
-
-		System.out.println("The word is " + word.length() + " characters long");
-		
-		// loop until the user has guessed all characters successfully
-		while (!word.solved()) {
-			System.out.println(word);
-			
-			// use the getChar function to take 1 char from the terminal
-			char guess = getChar();
-			
-			word.guessLetter(guess);
-		}
-		
-		System.out.println("tada");
+		System.out.println("Hello, what's your name?");
+		String name = scanner.nextLine();
+		System.out.println("Hi " + name);
 	}
 	
 	// Get 1 char from the terminal
