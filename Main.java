@@ -1,3 +1,5 @@
+//add school name, group number, and individual names
+
 import java.util.Scanner;
 
 public class Main {
